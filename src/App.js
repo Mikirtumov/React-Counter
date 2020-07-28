@@ -4,11 +4,15 @@ import './App.css';
 
 function App() {
     const [counters, setCounters] = useState([10,3,22]);
+
+    const addCounters = () => {
+        setCounters([...counters, 5])
+    }
   return (
     <div className="App">
 
-        {counters.map(el => <Counter count={el} key={el}/>)}
-        <button>Add Counter</button>
+        {counters.map((el, i)=> <Counter count={el} key={i}/>)}
+        <button onClick={addCounters}>Add Counter</button>
     </div>
   );
 }
