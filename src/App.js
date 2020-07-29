@@ -14,6 +14,12 @@ function App() {
         newArr[n] += value
         setCounters(newArr);
     }
+    const delAll = (n) => {
+        const emptyArr = [...counters]
+        emptyArr[n] = 0;
+        setCounters(emptyArr)
+    }
+
 
   return (
     <div className="App">
@@ -25,6 +31,7 @@ function App() {
             plusMinus={plusMinus}
             />)}
         <button onClick={addCounters}>Add Counter</button>
+        <button onClick={delAll}>Del All</button>
     </div>
   );
 }
