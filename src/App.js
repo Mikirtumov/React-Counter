@@ -31,7 +31,7 @@ function App() {
             index={i}
             plusMinus={plusMinus}
             />)}
-        <button onClick={addCounters}>Add Counter</button>
+        <button type="button" className="btn btn-secondary" onClick={addCounters}>Add Counter</button>
         <button onClick={delAll}>Del All</button>
     </div>
   );
