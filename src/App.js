@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Counter from "./Counter";
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
     const [counters, setCounters] = useState([10,3,22]);
