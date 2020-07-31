@@ -19,6 +19,12 @@ function App() {
         setCounters([])
     }
 
+    const resAll = () => {
+        const resetAll = [...counters];
+
+        setCounters(resetAll)
+    }
+
 
   return (
     <div className="App">
@@ -31,6 +37,7 @@ function App() {
             />)}
         <button type="button" className="btn btn-secondary" onClick={addCounters}>Add Counter</button>
         <button type="button" className="btn btn-dark" onClick={delAll}>Del All</button>
+        <button onClick={resAll}>RES</button>
     </div>
   );
 }
