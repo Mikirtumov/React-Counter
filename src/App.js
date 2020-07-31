@@ -15,10 +15,8 @@ function App() {
         newArr[n] += value
         setCounters(newArr);
     }
-    const delAll = (n) => {
-        const emptyArr = [...counters]
-        emptyArr[n] = 0;
-        setCounters(emptyArr)
+    const delAll = () => {
+        setCounters([])
     }
 
 
@@ -32,7 +30,7 @@ function App() {
             plusMinus={plusMinus}
             />)}
         <button type="button" className="btn btn-secondary" onClick={addCounters}>Add Counter</button>
-        <button onClick={delAll}>Del All</button>
+        <button type="button" className="btn btn-dark" onClick={delAll}>Del All</button>
     </div>
   );
 }
