@@ -15,14 +15,25 @@ function App() {
         newArr[n] += value
         setCounters(newArr);
     }
+
+    const delCounter = (index) => {
+        const updatedCounter = counters.filter((el, i) => i !== index)
+        setCounters(updatedCounter)
+    }
+    const resAll = (index) => {
+        const updatedCounter = counters.map((el, i) => index = 0)
+        setCounters(updatedCounter)
+    }
+
     const delAll = () => {
         setCounters([])
     }
 
-    const resAll = () => {
-        const resetAll = [...counters];
+    const  resCounter = (index) => {
+        const updatedCounter = [...counters];
+        updatedCounter[index] = 0;
 
-        setCounters(resetAll)
+        setCounters(updatedCounter)
     }
 
 
@@ -34,10 +45,13 @@ function App() {
             key={i}
             index={i}
             plusMinus={plusMinus}
+            delCounter={delCounter}
+            resCounter={resCounter}
             />)}
-        <button type="button" className="btn btn-secondary" onClick={addCounters}>Add Counter</button>
-        <button type="button" className="btn btn-dark" onClick={delAll}>Del All</button>
-        <button onClick={resAll}>RES</button>
+            <br/>
+        <button type="button" className="btn btn-outline-primary btn-lg ml-2 mr-2" onClick={addCounters}>Add Counter</button>
+        <button type="button" className="btn btn-outline-danger btn-lg ml-2 mr-2" onClick={delAll}>Del All</button>
+        <button type="button" className="btn btn-outline-warning btn-lg ml-2 mr-2" onClick={resAll}>RES</button>
     </div>
   );
 }
